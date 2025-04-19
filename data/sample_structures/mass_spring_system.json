@@ -1,0 +1,7 @@
+{
+    "n_masses": 5,
+    "mass_values": [1.0, 1.0, 1.0, 1.0, 1.0],
+    "spring_constants": [10.0, 10.0, 10.0, 10.0, 10.0, 10.0],
+    "damping_coefficients": [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+    "boundary_condition": "fixed_ends"
+}

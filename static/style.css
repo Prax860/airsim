@@ -1,0 +1,293 @@
+/* Main styles with improved background */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f0524 0%, #1a0a36 50%, #0a1a3a 100%);
+    color: #e0e0ff;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background-attachment: fixed;
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+/* Headers with subtler effect */
+h1, h2, h3 {
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(143, 0, 255, 0.6);
+    letter-spacing: 1px;
+    animation: slideInFromLeft 1s ease-out;
+}
+
+h1 {
+    background: linear-gradient(to right, #6e33ff, #00e5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 2px solid #6e33ff;
+    padding-bottom: 10px;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Improved plots */
+.stPlot {
+    border-radius: 16px;
+    padding: 15px;
+    background: rgba(15, 5, 36, 0.7);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(110, 51, 255, 0.3);
+    animation: fadeScale 0.8s ease-out;
+}
+
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Vibrant Buttons */
+button {
+    background: linear-gradient(45deg, #6e33ff, #00e5ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 229, 255, 0.3);
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(45deg);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(110, 51, 255, 0.4);
+}
+
+button:hover::after {
+    left: 100%;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Dramatically Improved Card Styling */
+.card {
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    background: rgba(20, 10, 50, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(110, 51, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+    overflow: hidden;
+    animation: cardAppear 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes cardAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: all 0.7s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(10, 0, 20, 0.4), 0 0 25px rgba(110, 51, 255, 0.4);
+    border: 1px solid rgba(110, 51, 255, 0.5);
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+/* Card content animation */
+.card h3 {
+    animation-delay: 0.1s;
+}
+
+.card p {
+    animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.card img, .card .stPlot {
+    animation: fadeIn 0.8s ease-out 0.3s both;
+}
+
+/* Tab styling */
+.stTabs [data-baseweb="tab-list"] {
+    background: rgba(15, 5, 36, 0.5);
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 8px;
+    margin: 0 3px;
+    color: #d2d2f5;
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(45deg, rgba(110, 51, 255, 0.3), rgba(0, 229, 255, 0.3));
+    color: white !important;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(110, 51, 255, 0.2);
+    font-weight: 600;
+}
+
+.stTabs [data-baseweb="tab"]:hover:not([aria-selected="true"]) {
+    background: rgba(110, 51, 255, 0.1);
+    color: #6e33ff;
+}
+
+/* Input field styling */
+input, select, textarea {
+    background: rgba(15, 5, 36, 0.7) !important;
+    border: 1px solid rgba(110, 51, 255, 0.3) !important;
+    border-radius: 10px !important;
+    color: #e0e0ff !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+input:focus, select:focus, textarea:focus {
+    border: 1px solid #6e33ff !important;
+    box-shadow: 0 0 15px rgba(110, 51, 255, 0.5) !important;
+    transform: translateY(-2px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(15, 5, 36, 0.7);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #6e33ff, #00e5ff);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #00e5ff, #6e33ff);
+}
+
+/* Animated background for special sections */
+.highlight-section {
+    position: relative;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 25px 0;
+    background: linear-gradient(-45deg, #1e0740, #101d45, #16084d, #09385a);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+/* Table styling with improved look */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+th {
+    background: linear-gradient(45deg, rgba(110, 51, 255, 0.8), rgba(0, 229, 255, 0.8));
+    color: white;
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+tr {
+    transition: all 0.3s ease;
+}
+
+tr:nth-child(even) {
+    background: rgba(110, 51, 255, 0.05);
+}
+
+tr:hover {
+    background: rgba(0, 229, 255, 0.1);
+    transform: scale(1.01);
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(110, 51, 255, 0.1);
+}
+
+/* Animations for content */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

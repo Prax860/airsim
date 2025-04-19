@@ -1,0 +1,9 @@
+numpy>=1.20.0
+scipy>=1.7.0
+sympy>=1.8.0
+matplotlib>=3.4.0
+plotly>=5.3.0
+streamlit>=1.0.0
+PyWavelets>=1.1.0  # For better wavelet transform support
+streamlit-lottie>=0.0.3  # For Lottie animations
+requests>=2.25.1  # For fetching Lottie files

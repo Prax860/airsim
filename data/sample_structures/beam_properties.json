@@ -1,0 +1,9 @@
+{
+    "length": 1.0,
+    "width": 0.05,
+    "height": 0.01,
+    "youngs_modulus": 2.1e11,
+    "density": 7800,
+    "boundary_condition": "cantilever",
+    "elements": 20
+}
